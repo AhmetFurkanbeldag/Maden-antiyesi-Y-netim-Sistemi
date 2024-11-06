@@ -46,13 +46,13 @@ Nitelikler: kart_id, calisan_id (Çalışan tablosuyla ilişkili), kart_no, kart
 Nitelikler: malzeme_id, calisan_id (Çalışan tablosuyla ilişkili), malzeme_adi, miktar
 
 
-2.	Puantaj:
+4.	Puantaj:
    
 o	Temel bilgiler: id, calisan_id (Çalışan ile ilişki), tarih, mesai_tipi, mesai_saat, fazla_mesai.
 
 o	Açıklama bilgisi: aciklama.
 
-4.	Vardiya:
+5.	Vardiya:
    
 o	Temel bilgiler: id, tarih, vardiyaBaslangic, vardiyaBitis.
 
