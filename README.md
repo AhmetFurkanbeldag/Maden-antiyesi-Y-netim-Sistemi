@@ -1,4 +1,3 @@
-# Maden-Santiyesi-Yonetim-Sistemi
 
 # Projedeki Kişiler:
 
