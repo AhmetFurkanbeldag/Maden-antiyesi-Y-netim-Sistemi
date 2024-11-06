@@ -75,5 +75,6 @@ Bu gereksinimler doğrultusunda, sistemin tasarlanması ve geliştirilmesi proje
 
 # E-R Diyagramı:
 
-![WhatsApp Görsel 2024-11-06 saat 01 07 22_8c26e993](https://github.com/user-attachments/assets/58159fec-a390-425b-b131-b5aa75a24f2f)
+![whatsapp e-r diagrams](https://github.com/user-attachments/assets/c7882139-bbf2-47e8-8ad8-f1beafb0d413)
+
 
