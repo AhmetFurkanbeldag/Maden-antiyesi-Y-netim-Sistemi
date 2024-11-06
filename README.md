@@ -92,30 +92,32 @@ o	İlişkili çalışan bilgisi: calisan_id.
 
 Projede varlıklar arasında çeşitli ilişkiler ve kısıtlamalar bulunmaktadır. Bu ilişkiler sayesinde sistemdeki verilerin birbiriyle uyumlu ve doğru şekilde yönetilmesi sağlanır.
 
-Çalışan - Vardiya:
+Çalışan - Vardiya İlişkisi:
 
-Bir çalışanın birden fazla vardiyası olabilir, fakat her vardiyada yalnızca bir çalışan yer alabilir. (1) ----> (N) ilişkisi vardır.
+ Bir çalışanın birden fazla vardiyası olabilir, fakat her vardiyada yalnızca bir çalışan yer alabilir. (1) ----> (N) ilişkisi vardır.
 
 Çalışan – Puantaj İlişkisi:
 
  Bir çalışanın birden fazla puantaj kaydı olabilir. (1) ----> (N) ilişkisi vardır.
+ 
 Vardiya – Malzeme İlişkisi:
 
  Bir vardiyada birden fazla malzeme kullanılabilir, ancak her malzeme yalnızca bir vardiyaya ait olur. (1) ----> (N) ilişkisi vardır.
  
 Malzeme – Siparişler İlişkisi:
 
-Bir malzeme birden fazla siparişle ilişkili olabilir, ancak her sipariş tek bir malzemeye ait olur. ilişkisi vardır. (1)---->(N) ilişkisi vardır.
+ Bir malzeme birden fazla siparişle ilişkili olabilir, ancak her sipariş tek bir malzemeye ait olur. ilişkisi vardır. (1)---->(N) ilişkisi vardır.
 
 Çalışan – Siparişler İlişkisi:
 
-Bir çalışan birden fazla sipariş oluşturabilir, fakat her sipariş tek bir çalışan tarafından oluşturulmalıdır. (1) ----> (N) ilişkisi vardır.
+ Bir çalışan birden fazla sipariş oluşturabilir, fakat her sipariş tek bir çalışan tarafından oluşturulmalıdır. (1) ----> (N) ilişkisi vardır.
 
 Hafif ve Ağır Malzemeler-Malzemeler İlişkisi:
 
-Hafif ve ağır malzemeler, malzeme tablosunda farklı özellikler ve kullanım alanlarına göre ayrılır. Malzeme tablosunda, her bir malzeme türü için ağırlık, dayanıklılık, maliyet ve kullanım amacına göre sınıflandırmalar bulunur. 
+ Hafif ve ağır malzemeler, malzeme tablosunda farklı özellikler ve kullanım alanlarına göre ayrılır. Malzeme tablosunda, her bir malzeme türü için ağırlık, 
+ dayanıklılık, maliyet ve kullanım amacına göre sınıflandırmalar bulunur. 
 
-Malzeme tablosunda bu özelliklerin her biri belirli kriterler altında gösterilir. Hafif ve ağır malzemelerin seçimi projeye özel gereksinimlere göre yapılır.
+ Malzeme tablosunda bu özelliklerin her biri belirli kriterler altında gösterilir. Hafif ve ağır malzemelerin seçimi projeye özel gereksinimlere göre yapılır.
 
 # İş Kuralları ve Kısıtlamalar:
 
