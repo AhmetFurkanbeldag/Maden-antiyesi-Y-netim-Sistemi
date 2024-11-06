@@ -18,7 +18,9 @@ Bu proje, iş yerinde çalışanların vardiya ve malzeme takibini dijital bir s
    
 İş yerinde çalışan kişilere ait bilgileri içerir.
 
-Temel Bilgiler: id, ad, soyad, tc_no, sicil_no
+Temel Bilgiler: 
+
+id, ad, soyad, tc_no, sicil_no
 
 İletişim ve Demografik Bilgiler:
 
