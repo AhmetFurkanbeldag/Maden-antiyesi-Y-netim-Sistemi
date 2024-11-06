@@ -73,3 +73,7 @@ Bu sistem, işletmenin operasyonel süreçlerini daha etkili bir şekilde yönet
 •	Sipariş Durumu Raporu: Siparişlerin onay durumu, teslim edilme durumu gibi bilgiler raporlanmalıdır.
 Bu gereksinimler doğrultusunda, sistemin tasarlanması ve geliştirilmesi projenin hedeflerine ulaşması için büyük önem taşır. Sistemin kapsamlı, kullanıcı dostu ve iş akışlarına uygun olması için bu gereksinimlere uyulmalıdır.
 
+# E-R Diyagramı:
+
+![WhatsApp Görsel 2024-11-06 saat 01 07 22_8c26e993](https://github.com/user-attachments/assets/58159fec-a390-425b-b131-b5aa75a24f2f)
+
