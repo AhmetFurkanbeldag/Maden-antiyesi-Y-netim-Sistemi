@@ -1,1 +1,2 @@
-# Maden-antiyesi-Y-netim-Sistemi
+# Maden-Santiyesi-Yonetim-Sistemi
+
