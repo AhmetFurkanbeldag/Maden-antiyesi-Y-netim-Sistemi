@@ -80,7 +80,7 @@ Malzeme tablosundan türetilmiş olup, ağır malzemelere ait bilgileri içerir.
 
 Nitelikler: malzeme_id, malzeme_adi, stok_miktar, aciklama
 
-9.	Siparişler:
+9.Siparişler:
 
 o	Temel bilgiler: siparis_no, kategori, malzeme, firma, adet_miktar.
 
