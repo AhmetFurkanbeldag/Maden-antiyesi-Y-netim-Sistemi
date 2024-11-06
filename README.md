@@ -17,15 +17,13 @@ Bu proje, iş yerinde çalışanların vardiya ve malzeme takibini dijital bir s
 1.	Çalışan:
    
 İş yerinde çalışan kişilere ait bilgileri içerir.
-
 Temel Bilgiler: id, ad, soyad, tc_no, sicil_no
 
-İletişim ve Demografik Bilgiler: telefon, e_posta, adres, dogum_tarihi
+İletişim ve Demografik Bilgiler:
 
+telefon, e_posta, adres, dogum_tarihi
 İş Bilgileri: mezuniyet, maas, meslek, gorev, gorev_2, giris_tarihi, cikis_tarihi
-
 SGK ve Kurum Bilgileri: sgk_isyeri_sicil_no, iskolu, biriken_izin, kurum
-
 Çalışan Türü: tur alanı ile çalışanlar "yönetici" veya "işçi" olarak ayrılmaktadır.
 
 2.Yöneticiler:
@@ -75,18 +73,32 @@ o	İlişkili çalışan bilgisi: calisan_id.
 
 # Varlıklar Arasındaki İlişkiler ve Kısıtlamalar:
 
-Projede varlıklar arasında çeşitli ilişkiler ve kısıtlamalar bulunmaktadır. Bu ilişkiler sayesinde sistemdeki verilerin birbiriyle uyumlu ve doğru şekilde yönetilmesi sağlanır:
+Projede varlıklar arasında çeşitli ilişkiler ve kısıtlamalar bulunmaktadır. Bu ilişkiler sayesinde sistemdeki verilerin birbiriyle uyumlu ve doğru şekilde yönetilmesi sağlanır.
+
 Çalışan - Vardiya:
+
 Bir çalışanın birden fazla vardiyası olabilir, fakat her vardiyada yalnızca bir çalışan yer alabilir. (1) ----> (N) ilişkisi vardır.
 
 Çalışan – Puantaj İlişkisi:
+
  Bir çalışanın birden fazla puantaj kaydı olabilir. (1) ----> (N) ilişkisi vardır.
 Vardiya – Malzeme İlişkisi:
+
  Bir vardiyada birden fazla malzeme kullanılabilir, ancak her malzeme yalnızca bir vardiyaya ait olur. (1) ----> (N) ilişkisi vardır.
-Malzeme – Siparişler İlişkisi: 
+ 
+Malzeme – Siparişler İlişkisi:
+
 Bir malzeme birden fazla siparişle ilişkili olabilir, ancak her sipariş tek bir malzemeye ait olur. ilişkisi vardır.
-Çalışan – Siparişler İlişkisi: 
+
+Çalışan – Siparişler İlişkisi:
+
 Bir çalışan birden fazla sipariş oluşturabilir, fakat her sipariş tek bir çalışan tarafından oluşturulmalıdır. (1) ----> (N) ilişkisi vardır.
+
+Hafif ve Ağır Malzemeler-Malzemeler İlişkisi:
+
+Hafif ve ağır malzemeler, malzeme tablosunda farklı özellikler ve kullanım alanlarına göre ayrılır. Malzeme tablosunda, her bir malzeme türü için ağırlık, dayanıklılık, maliyet ve kullanım amacına göre sınıflandırmalar bulunur. 
+
+Malzeme tablosunda bu özelliklerin her biri belirli kriterler altında gösterilir. Hafif ve ağır malzemelerin seçimi projeye özel gereksinimlere göre yapılır.
 
 # İş Kuralları ve Kısıtlamalar:
 
