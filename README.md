@@ -1,9 +1,11 @@
 
 # Projedeki Kişiler:
 
-Ahmet Furkan Beldağ -225260032
-Elif Bayır -240260138-
-Serhat Tamşen -225260020-
+Ahmet Furkan Beldağ 225260032
+
+Elif Bayır   240260138
+
+Serhat Tamşen 225260020
 
 # Proje Gereksinimleri:
 
