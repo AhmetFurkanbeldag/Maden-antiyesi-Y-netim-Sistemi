@@ -17,58 +17,73 @@ Bu proje, iş yerinde çalışanların vardiya ve malzeme takibini dijital bir s
 1.	Çalışan:
    
 İş yerinde çalışan kişilere ait bilgileri içerir.
+
 Temel Bilgiler: id, ad, soyad, tc_no, sicil_no
 
 İletişim ve Demografik Bilgiler:
 
 telefon, e_posta, adres, dogum_tarihi
+
 İş Bilgileri: mezuniyet, maas, meslek, gorev, gorev_2, giris_tarihi, cikis_tarihi
+
 SGK ve Kurum Bilgileri: sgk_isyeri_sicil_no, iskolu, biriken_izin, kurum
+
 Çalışan Türü: tur alanı ile çalışanlar "yönetici" veya "işçi" olarak ayrılmaktadır.
 
 2.Yöneticiler:
 
 Yöneticilere ait özel giriş kartı bilgilerini tutar.
+
 Nitelikler: kart_id, calisan_id (Çalışan tablosuyla ilişkili), kart_no, kart_turu, verilme_tarihi
 
 
 3.İşçiler:
 
 İşçilerin kullandığı malzemelerin takibini sağlar.
+
 Nitelikler: malzeme_id, calisan_id (Çalışan tablosuyla ilişkili), malzeme_adi, miktar
 
 
 2.	Puantaj:
    
 o	Temel bilgiler: id, calisan_id (Çalışan ile ilişki), tarih, mesai_tipi, mesai_saat, fazla_mesai.
+
 o	Açıklama bilgisi: aciklama.
 
 4.	Vardiya:
    
 o	Temel bilgiler: id, tarih, vardiyaBaslangic, vardiyaBitis.
+
 o	Çalışma alanı bilgileri: lokasyonAdi, kuyuNumarasi, egim, makinaNo, seriNo.
+
 o	Diğer detaylar: toplamIlerleme, toplamKarot, matkapNo, havaDurumu, aciklama.
 
 6.	Malzeme:
    
 o	Temel bilgiler: malzeme_id, malzeme_adi, stok_miktar.
+
 o	Açıklama: aciklama.
+
 o	İlişkili sipariş bilgisi: siparis_no.
 
 7.Hafif Malzemeler:
 
 Malzeme tablosundan türetilmiş olup, hafif malzemelere ait bilgileri içerir.
+
 Nitelikler: malzeme_id, malzeme_adi, stok_miktar, aciklama
 
 8.Ağır Malzemeler:
 
 Malzeme tablosundan türetilmiş olup, ağır malzemelere ait bilgileri içerir.
+
 Nitelikler: malzeme_id, malzeme_adi, stok_miktar, aciklama
 
 9.	Siparişler:
 
 o	Temel bilgiler: siparis_no, kategori, malzeme, firma, adet_miktar.
+
 o	Ek bilgiler: firma_adi, aciliyet, tarih, onay.
+
 o	İlişkili çalışan bilgisi: calisan_id.
 
 # Varlıklar Arasındaki İlişkiler ve Kısıtlamalar:
@@ -88,7 +103,7 @@ Vardiya – Malzeme İlişkisi:
  
 Malzeme – Siparişler İlişkisi:
 
-Bir malzeme birden fazla siparişle ilişkili olabilir, ancak her sipariş tek bir malzemeye ait olur. ilişkisi vardır.
+Bir malzeme birden fazla siparişle ilişkili olabilir, ancak her sipariş tek bir malzemeye ait olur. ilişkisi vardır. (1)---->(N) ilişkisi vardır.
 
 Çalışan – Siparişler İlişkisi:
 
