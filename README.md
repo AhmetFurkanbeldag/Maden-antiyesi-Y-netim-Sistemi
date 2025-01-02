@@ -3,7 +3,7 @@
 
 Ahmet Furkan Beldağ (225260032)
 
-Elif Bayır   (240260138)
+Elif Bayir   (240260138)
 
 Serhat Tamşen (225260020)
 
