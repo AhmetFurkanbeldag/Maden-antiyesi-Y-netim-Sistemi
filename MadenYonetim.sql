@@ -1,3 +1,7 @@
+--Öncelikle Database Oluşturuyoruz.
+CREATE DATABASE SantiyeYonetimSistemi;
+USE SantiyeYonetimSistemi;
+
 -- Tablo Oluşturma Komutları
 -- Calisan Tablosu
 CREATE TABLE Calisan (
