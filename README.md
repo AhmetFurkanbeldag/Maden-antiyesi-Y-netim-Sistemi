@@ -20,6 +20,7 @@ Proje kapsamında veritabanında yer alacak ana varlıklar ve bu varlıklara ait
                          
 İş yerinde çalışan kişilere ait bilgileri içerir.
 Temel Bilgiler:
+
 İd(PK),
 
 ad,
@@ -44,7 +45,8 @@ SGK ve Kurum Bilgileri: sgk_isyeri_sicil_no, iskolu, biriken_izin, kurum
 
 # 2.Yöneticiler:
 Yöneticilere ait özel giriş kartı bilgilerini tutar.
-Nitelikler: 
+Nitelikler:
+
 kart_id(PK),
 
 calisan_id (FK),
@@ -55,10 +57,11 @@ kart_turu,
 
 verilme_tarihi
 
-3.İşçiler:
+# 3.İşçiler:
 
 İşçilerin kullandığı malzemelerin takibini sağlar.
 Nitelikler:
+
 malzeme_id(PK),
 
 calisan_id (Çalışan tablosuyla ilişkili,FK),
@@ -67,7 +70,7 @@ malzeme_adi,
 
 miktar
 
-4. Puantaj:
+# 4. Puantaj:
    
 id(PK),
 
@@ -85,7 +88,7 @@ vardiya_id(FK),
 
 aciklama.
 
-6. Vardiya:
+# 5. Vardiya:
    
 id(PK),
 
@@ -100,7 +103,7 @@ calisan_id(FK).
 Çalışma alanı bilgileri: lokasyonAdi, kuyuNumarasi, egim, makinaNo, seriNo.
 Diğer detaylar: toplamIlerleme, toplamKarot, matkapNo, havaDurumu, aciklama.
 
-8. Malzeme:
+# 6. Malzeme:
    
 malzeme_id(PK),
 
@@ -112,21 +115,11 @@ aciklama,
 
 siparis_no(FK).
 
-7.Hafif Malzemeler:
+# 7.Hafif Malzemeler:
 
 Malzeme tablosundan türetilmiş olup, hafif malzemelere ait bilgileri içerir.
-Nitelikler: malzeme_id(PK),
-
-malzeme_adi,
-
-stok_miktar,
-
-aciklama
-
-8.Ağır Malzemeler:
-
-Malzeme tablosundan türetilmiş olup, ağır malzemelere ait bilgileri içerir.
 Nitelikler: 
+
 malzeme_id(PK),
 
 malzeme_adi,
@@ -135,9 +128,23 @@ stok_miktar,
 
 aciklama
 
-9.Siparişler:
+# 8.Ağır Malzemeler:
 
-Temel bilgiler: 
+Malzeme tablosundan türetilmiş olup, ağır malzemelere ait bilgileri içerir.
+Nitelikler:
+
+malzeme_id(PK),
+
+malzeme_adi,
+
+stok_miktar,
+
+aciklama
+
+# 9.Siparişler:
+
+Temel bilgiler:
+
 siparis_no(PK),
 
 kategori,
