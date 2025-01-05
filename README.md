@@ -150,3 +150,4 @@ Bu gereksinimler doğrultusunda, sistemin tasarlanması ve geliştirilmesi proje
 ![whatsapp e-r diagrams](https://github.com/user-attachments/assets/c7882139-bbf2-47e8-8ad8-f1beafb0d413)
 
 
+
