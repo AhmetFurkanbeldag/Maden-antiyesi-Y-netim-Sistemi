@@ -21,87 +21,135 @@ Proje kapsamında veritabanında yer alacak ana varlıklar ve bu varlıklara ait
 İş yerinde çalışan kişilere ait bilgileri içerir.
 Temel Bilgiler:
 İd(PK),
+
 ad,
+
 soyad,
+
 tc_no,
-sicil_no
+
+sicil_no,
+
 İletişim ve Demografik Bilgiler:
 telefon,
+
 e_posta,
+
 adres,
+
 dogum_tarihi
 İş Bilgileri: mezuniyet, maas, meslek, gorev, gorev_2, giris_tarihi, cikis_tarihi
 SGK ve Kurum Bilgileri: sgk_isyeri_sicil_no, iskolu, biriken_izin, kurum
 Çalışan Türü: tur alanı ile çalışanlar "yönetici" veya "işçi" olarak ayrılmaktadır.
-2.Yöneticiler:
+
+# 2.Yöneticiler:
 Yöneticilere ait özel giriş kartı bilgilerini tutar.
-Nitelikler: kart_id(PK),
+Nitelikler: 
+kart_id(PK),
+
 calisan_id (FK),
+
 kart_no,
+
 kart_turu,
+
 verilme_tarihi
 
 3.İşçiler:
 
 İşçilerin kullandığı malzemelerin takibini sağlar.
-Nitelikler: malzeme_id(PK),
+Nitelikler:
+malzeme_id(PK),
+
 calisan_id (Çalışan tablosuyla ilişkili,FK),
+
 malzeme_adi,
+
 miktar
 
 4. Puantaj:
    
 id(PK),
+
 calisan_id (Çalışan ile ilişki,FK),
+
 tarih,
+
 mesai_tipi,
+
 mesai_saat,
+
 fazla_mesai,
-vardiya_id(FK)
+
+vardiya_id(FK),
+
 aciklama.
 
 6. Vardiya:
    
 id(PK),
+
 tarih,
+
 vardiyaBaslangic,
+
 vardiyaBitis,
+
 calisan_id(FK).
+
 Çalışma alanı bilgileri: lokasyonAdi, kuyuNumarasi, egim, makinaNo, seriNo.
 Diğer detaylar: toplamIlerleme, toplamKarot, matkapNo, havaDurumu, aciklama.
 
 8. Malzeme:
    
 malzeme_id(PK),
+
 malzeme_adi,
-stok_miktar.
-aciklama.
+
+stok_miktar,
+
+aciklama,
+
 siparis_no(FK).
 
 7.Hafif Malzemeler:
 
 Malzeme tablosundan türetilmiş olup, hafif malzemelere ait bilgileri içerir.
 Nitelikler: malzeme_id(PK),
+
 malzeme_adi,
+
 stok_miktar,
+
 aciklama
 
 8.Ağır Malzemeler:
 
 Malzeme tablosundan türetilmiş olup, ağır malzemelere ait bilgileri içerir.
-Nitelikler: malzeme_id(PK),
+Nitelikler: 
+malzeme_id(PK),
+
 malzeme_adi,
+
 stok_miktar,
+
 aciklama
 
 9.Siparişler:
 
-Temel bilgiler: siparis_no(PK),
+Temel bilgiler: 
+siparis_no(PK),
+
 kategori,
+
 malzeme(FK),
+
 firma(FK),
+
 adet_miktar.
+
 Ek bilgiler: firma_adi, aciliyet, tarih, onay.
+
 calisan_id(FK).
 
 # Varlıklar Arasındaki İlişkiler ve Kısıtlamalar:
