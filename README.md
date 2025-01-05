@@ -192,7 +192,60 @@ Projede üç temel kullanıcı türü bulunmaktadır ve her birinin farklı gere
    
 # Raporlama ve İzleme:
 Bu sistem, işletmenin operasyonel süreçlerini daha etkili bir şekilde yönetebilmesi için çeşitli raporlama ve izleme özellikleri de içermelidir: • Vardiya Raporları: Vardiya başına görevli çalışanlar ve yapılan işler raporlanmalı. • Malzeme Stok Raporu: Stok durumu periyodik olarak raporlanmalı ve eksik malzemeler hakkında bilgilendirme yapılmalı. Sipariş Durumu Raporu: Siparişlerin onay durumu, teslim edilme durumu gibi bilgiler raporlanmalıdır. Hafif ve Ağır Malzemeler Raporu: Malzemelerin türlerine göre stok durumları ve kullanımları düzenli olarak raporlanmalıdır.
-Bu gereksinimler doğrultusunda, sistemin tasarlanması ve geliştirilmesi projenin hedeflerine ulaşması için büyük önem taşır. Sistemin kapsamlı, kullanıcı dostu ve iş akışlarına uygun olması için bu gereksinimlere uyulmalıdır
+Bu gereksinimler doğrultusunda, sistemin tasarlanması ve geliştirilmesi projenin hedeflerine ulaşması için büyük önem taşır. Sistemin kapsamlı, kullanıcı dostu ve iş akışlarına uygun olması için bu gereksinimlere uyulmalıdır.
+
+#                                    Normalizasyon Süreci
+
+# 1NF Ayrıştırma:
+Tablodaki bütün kolonlar atomik (tekil değerler içeriyor), dolayısıyla 1NF koşulu sağlanmıştır.
+
+# 2NF Ayrıştırma:
+Vardiya tablosundaki tüm kolonlar, birincil anahtar olan vardiya_id ile tam bağımlıdır ve kısmi bağımlılık yoktur. Bu nedenle, 2NF koşulu sağlanmıştır.
+Malzeme tablosundaki kolonlar malzeme_id ile doğrudan bağımlıdır. Kısmi bağımlılık olmadığından dolayı 2NF sağlanmıştır.
+
+# 3NF Ayrıştırma:
+Transitif bağımlılıkların olduğu tablolar belirlenmiş ve ayrıştırılmıştır:
+Çalışan tablosu, transitif bağımlılığı ortadan kaldırmak için iki tabloya ayrıştırılır:
+
+Çalışanlar (id(PK), ad, soyad, meslek, görevi, giriş_tarihi, çıkış_tarihi, tur)
+ÇalışanBilgileri (id(PK), doğum_tarihi, telefon, adres, mezuniyet, sgk_no, birim_izin, kurum)
+
+Malzeme tablosu, malzemelerin ağırlıklarına göre iki tabloya ayrılmıştır:
+
+Ağır Malzemeler (malzeme_id, malzeme_adi, stok_miktar, açıklama)
+Hafif Malzemeler (malzeme_id, malzeme_adi, stok_miktar, açıklama)
+
+# BCNF Ayrıştırma:
+Tüm tablolar incelenmiş ve her determinant bir aday anahtarı olduğundan dolayı BCNF koşulu sağlanmıştır.
+
+#                                Normalizasyon Sonrası İlişkiler
+Çalışanlar 1:N Vardiyalar
+(Bir çalışan birden fazla vardiyada çalışabilir.)
+
+Çalışanlar 1:1 ÇalışanBilgileri
+(Her çalışanın detaylı bilgileri ayrı bir tabloda tutulur.)
+
+Vardiyalar 1:N Malzemeler
+(Bir vardiya birden fazla malzeme kullanabilir.)
+
+Malzemeler 1:1 Ağır Malzemeler ve 1:1 Hafif Malzemeler
+(Her malzeme ya ağır ya da hafif olarak sınıflandırılır.)
+
+Malzemeler 1:N Siparişler
+(Bir malzeme birden fazla siparişte yer alabilir.)
+
+Siparişler N:1 Çalışanlar
+(Bir siparişi bir çalışan oluşturur.)
+
+Çalışanlar 1:N Yöneticiler
+(Her yönetici bir çalışandır.)
+
+Çalışanlar 1:N İşçiler
+(Her işçi de bir çalışandır.)
+
+
+
+
 # E-R Diyagramı:
 
 ![whatsapp e-r diagrams](https://github.com/user-attachments/assets/c7882139-bbf2-47e8-8ad8-f1beafb0d413)
