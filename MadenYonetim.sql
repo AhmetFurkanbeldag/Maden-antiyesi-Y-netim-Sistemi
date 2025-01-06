@@ -2,7 +2,7 @@
 CREATE DATABASE SantiyeYonetimSistemi;
 USE SantiyeYonetimSistemi;
 
--- Tablo Oluşturma Komutları
+                           -- Tablo Oluşturma Komutları
 -- Calisan Tablosu
 CREATE TABLE Calisan (
     id INT PRIMARY KEY IDENTITY(1,1),
@@ -26,6 +26,7 @@ CREATE TABLE Calisan (
     tur NVARCHAR(10) CHECK (tur IN ('yonetici', 'isci'))
 );
 GO
+-- Malzeme Tablosu
 CREATE TABLE Malzeme (
     malzeme_id INT PRIMARY KEY IDENTITY(1,1),
     malzeme_adi NVARCHAR(100),
@@ -59,10 +60,7 @@ CREATE TABLE Vardiya (
     FOREIGN KEY (calisan_id) REFERENCES Calisan(id)
 );
 GO
-
--- Malzeme Tablosu
-
-
+--Ağır Malzeme Tablosu
 CREATE TABLE AgirMalzeme (
     malzeme_id INT PRIMARY KEY,
     stok_miktar INT,
@@ -70,7 +68,7 @@ CREATE TABLE AgirMalzeme (
     FOREIGN KEY (malzeme_id) REFERENCES Malzeme(malzeme_id)
 );
 GO
-
+--Hafif Malzeme Tablosu
 CREATE TABLE HafifMalzeme (
     malzeme_id INT PRIMARY KEY,
     stok_miktar INT,
@@ -130,7 +128,7 @@ CREATE TABLE Isciler (
 );
 GO
 
--- Trigger Örnekleri
+                              -- Trigger Örnekleri
 -- 1. Malzeme Stok Kontrolü
 CREATE TRIGGER StokKontrol
 ON Malzeme
@@ -189,7 +187,7 @@ BEGIN
 END;
 GO
 
--- Prosedür Örnekleri
+                                     -- Prosedür Örnekleri
 -- 1. Yeni Çalışan Ekleme
 CREATE PROCEDURE YeniCalisanEkle
     @ad NVARCHAR(50),
@@ -243,7 +241,7 @@ BEGIN
     WHERE calisan_id = @calisan_id;
 END;
 GO
-           -- Saklı Yordamlar Kullanarak Örnek Veri Ekleme
+                         -- Saklı Yordamlar Kullanarak Örnek Veri Ekleme
 -- Yeni Çalışan ekleme
 CREATE PROCEDURE CalisanEkle
     @ad NVARCHAR(50),
@@ -331,7 +329,7 @@ EXEC YeniPuanEkle 1, '2025-01-05', 'Gündüz', 8, 2, 'Yoğun vardiya', 1;
 EXEC YeniPuanEkle 2, '2025-01-06', 'Gece', 10, 3, 'Ek mesai', 2;
 
 
--- Tablolara INSERT INTO ile Örnek Veri Ekleme
+                              -- Tablolara INSERT INTO ile Örnek Veri Ekleme
 
 -- 1. Calisan Tablosuna Veri Ekleme
 INSERT INTO Calisan (ad, soyad, tc_no, dogum_tarihi, telefon, adres, mezuniyet, meslek, gorev, aciklama, giris_tarihi, cikis_tarihi, birim_izin, kurum, isveren_id, sgk_isyeri_sicil_no, istihdam, tur)
@@ -370,7 +368,7 @@ VALUES (2, '2025-01-06', 'Gece', 10, 3, 'Ek mesai', 2);
 
 
 
--- Transaction İşlemleri Örnekleri
+                                     -- Transaction İşlemleri Örnekleri
 
 -- Örnek 1: Calisan ve Vardiya Tablosunda Transaction Kullanımı
 BEGIN TRANSACTION;
